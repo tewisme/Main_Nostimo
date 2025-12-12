@@ -1,5 +1,6 @@
 import { useLocation } from "react-router-dom";
 import BottomNav from "../components/BottomNav";
+import ChefHatLogo from "../components/ChefHatLogo";
 
 interface PlaceholderProps {
   activeTab: "home" | "search" | "add" | "awards" | "profile";
@@ -42,33 +43,8 @@ export default function Placeholder({ activeTab }: PlaceholderProps) {
       {/* Content */}
       <div className="flex items-center justify-center min-h-[calc(100vh-200px)]">
         <div className="text-center px-6">
-          <div className="w-32 h-32 mx-auto mb-6 rounded-full bg-gradient-to-br from-nostimo-yellow to-nostimo-orange flex items-center justify-center">
-            <svg
-              width="80"
-              height="80"
-              viewBox="0 0 80 80"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <ellipse cx="40" cy="35" rx="25" ry="20" fill="white" />
-              <path
-                d="M20 35 Q20 45 23 48 L57 48 Q60 45 60 35"
-                fill="#FFE7D0"
-                stroke="#874609"
-                strokeWidth="2"
-              />
-              <text
-                x="40"
-                y="50"
-                textAnchor="middle"
-                fill="#874609"
-                fontSize="18"
-                fontWeight="bold"
-                fontFamily="Jomhuria"
-              >
-                N
-              </text>
-            </svg>
+          <div className="w-32 h-32 mx-auto mb-6 rounded-full bg-gradient-to-br from-nostimo-yellow to-nostimo-orange flex items-center justify-center p-4">
+            <ChefHatLogo size={80} />
           </div>
           <h2 className="text-2xl font-semibold text-nostimo-brown mb-2 capitalize">
             {pageName} Page

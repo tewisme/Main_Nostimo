@@ -114,7 +114,10 @@ export default function Home() {
             </div>
 
             {/* Recipe Image */}
-            <div className="relative">
+            <div
+              className="relative cursor-pointer"
+              onClick={() => navigate(`/recipe/${recipe.id}`)}
+            >
               <img
                 src={recipe.image}
                 alt={recipe.title}

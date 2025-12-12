@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Eye, EyeOff } from "lucide-react";
+import ChefHatLogo from "../components/ChefHatLogo";
 
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -111,50 +112,7 @@ export default function Login() {
         {/* Logo */}
         <div className="flex flex-col items-center mb-12">
           <div className="w-40 h-40 rounded-full bg-white flex items-center justify-center mb-4 shadow-lg">
-            <svg
-              width="120"
-              height="120"
-              viewBox="0 0 120 120"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <ellipse
-                cx="60"
-                cy="50"
-                rx="35"
-                ry="30"
-                fill="url(#chef-hat-gradient)"
-              />
-              <path
-                d="M30 50 Q30 65 35 70 L85 70 Q90 65 90 50"
-                fill="#F5DEB3"
-                stroke="#874609"
-                strokeWidth="3"
-              />
-              <text
-                x="60"
-                y="75"
-                textAnchor="middle"
-                fill="#874609"
-                fontSize="24"
-                fontWeight="bold"
-                fontFamily="Jomhuria"
-              >
-                N
-              </text>
-              <defs>
-                <linearGradient
-                  id="chef-hat-gradient"
-                  x1="30"
-                  y1="20"
-                  x2="90"
-                  y2="50"
-                >
-                  <stop offset="0%" stopColor="#F4A460" />
-                  <stop offset="100%" stopColor="#FFB347" />
-                </linearGradient>
-              </defs>
-            </svg>
+            <ChefHatLogo size={120} />
           </div>
           <h1
             className="text-7xl text-nostimo-brown mb-2"
