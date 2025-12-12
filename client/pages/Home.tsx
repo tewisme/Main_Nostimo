@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { MessageCircle, Bookmark, Star } from "lucide-react";
 import BottomNav from "../components/BottomNav";
 
@@ -15,6 +16,7 @@ interface Recipe {
 }
 
 export default function Home() {
+  const navigate = useNavigate();
   const [recipes] = useState<Recipe[]>([
     {
       id: 1,
@@ -149,7 +151,12 @@ export default function Home() {
                 </div>
               </div>
 
-              <h3 className="text-xl font-['ABeeZee']">{recipe.title}</h3>
+              <h3
+                className="text-xl font-['ABeeZee'] cursor-pointer hover:text-nostimo-orange"
+                onClick={() => navigate(`/recipe/${recipe.id}`)}
+              >
+                {recipe.title}
+              </h3>
               <p className="text-sm text-gray-700 font-['ABeeZee']">
                 {recipe.category}
               </p>

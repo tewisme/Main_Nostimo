@@ -9,6 +9,7 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Home from "./pages/Home";
+import RecipeDetail from "./pages/RecipeDetail";
 import Placeholder from "./pages/Placeholder";
 import NotFound from "./pages/NotFound";
 
@@ -25,6 +26,7 @@ const App = () => (
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/home" element={<Home />} />
+          <Route path="/recipe/:id" element={<RecipeDetail />} />
           <Route
             path="/search"
             element={<Placeholder activeTab="search" />}
