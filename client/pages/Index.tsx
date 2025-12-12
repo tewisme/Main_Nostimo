@@ -1,61 +1,68 @@
-import { DemoResponse } from "@shared/api";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function Index() {
-  const [exampleFromServer, setExampleFromServer] = useState("");
-  // Fetch users on component mount
-  useEffect(() => {
-    fetchDemo();
-  }, []);
+  const navigate = useNavigate();
 
-  // Example of how to fetch data from the server (if needed)
-  const fetchDemo = async () => {
-    try {
-      const response = await fetch("/api/demo");
-      const data = (await response.json()) as DemoResponse;
-      setExampleFromServer(data.message);
-    } catch (error) {
-      console.error("Error fetching hello:", error);
-    }
-  };
+  useEffect(() => {
+    navigate("/login");
+  }, [navigate]);
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-100 to-slate-200">
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-nostimo-yellow to-nostimo-orange-dark">
       <div className="text-center">
-        {/* TODO: FUSION_GENERATION_APP_PLACEHOLDER replace everything here with the actual app! */}
-        <h1 className="text-2xl font-semibold text-slate-800 flex items-center justify-center gap-3">
+        <div className="w-48 h-48 mx-auto rounded-full bg-white flex items-center justify-center shadow-2xl mb-8">
           <svg
-            className="animate-spin h-8 w-8 text-slate-400"
-            viewBox="0 0 50 50"
+            width="140"
+            height="140"
+            viewBox="0 0 120 120"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
           >
-            <circle
-              className="opacity-30"
-              cx="25"
-              cy="25"
-              r="20"
-              stroke="currentColor"
-              strokeWidth="5"
-              fill="none"
+            <ellipse
+              cx="60"
+              cy="50"
+              rx="35"
+              ry="30"
+              fill="url(#chef-hat-gradient)"
             />
-            <circle
-              className="text-slate-600"
-              cx="25"
-              cy="25"
-              r="20"
-              stroke="currentColor"
-              strokeWidth="5"
-              fill="none"
-              strokeDasharray="100"
-              strokeDashoffset="75"
+            <path
+              d="M30 50 Q30 65 35 70 L85 70 Q90 65 90 50"
+              fill="#F5DEB3"
+              stroke="#874609"
+              strokeWidth="3"
             />
+            <text
+              x="60"
+              y="75"
+              textAnchor="middle"
+              fill="#874609"
+              fontSize="28"
+              fontWeight="bold"
+              fontFamily="Jomhuria"
+            >
+              N
+            </text>
+            <defs>
+              <linearGradient
+                id="chef-hat-gradient"
+                x1="30"
+                y1="20"
+                x2="90"
+                y2="50"
+              >
+                <stop offset="0%" stopColor="#F4A460" />
+                <stop offset="100%" stopColor="#FFB347" />
+              </linearGradient>
+            </defs>
           </svg>
-          Generating your app...
+        </div>
+        <h1
+          className="text-8xl text-white mb-2"
+          style={{ fontFamily: "Jomhuria, serif" }}
+        >
+          Nostimo
         </h1>
-        <p className="mt-4 text-slate-600 max-w-md">
-          Watch the chat on the left for updates that might need your attention
-          to finish generating
-        </p>
-        <p className="mt-4 hidden max-w-md">{exampleFromServer}</p>
       </div>
     </div>
   );
